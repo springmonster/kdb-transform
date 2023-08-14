@@ -13,7 +13,6 @@ class ConverterTest {
 
     @Test
     void createColumns() {
-        // 生成100个Model
         for (int i = 0; i < 100; i++) {
             long startTime = System.currentTimeMillis();
             Converter.createColumns(Model.class);
@@ -26,7 +25,7 @@ class ConverterTest {
     void createRows() {
         List<Model> models = new ArrayList<>();
         Random random = new Random();
-        // 生成100个Model的List
+
         for (int i = 0; i < 100; i++) {
             for (int j = 0; j < 100; j++) {
                 Model model = new Model(
@@ -41,13 +40,13 @@ class ConverterTest {
 
                 models.add(model);
             }
-            // 生成100个Model的List
+
             long startTime = System.currentTimeMillis();
             Converter.createRows(models, Model.class);
             long endTime = System.currentTimeMillis();
             System.out.println("Time taken: " + (endTime - startTime) + "ms\n");
 
-            models.clear();
+//            models.clear();
         }
     }
 }
